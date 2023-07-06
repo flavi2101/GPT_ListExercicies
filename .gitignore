@@ -1,6 +1,9 @@
 $ cat .gitignore
 *.txt
 
+#vscode debug and build
+.vscode
+
 # Prerequisites
 *.d
 
