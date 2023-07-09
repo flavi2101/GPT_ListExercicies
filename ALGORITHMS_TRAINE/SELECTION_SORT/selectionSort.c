@@ -6,7 +6,8 @@ void sortItem(int *, int *);
 int main()
 {
 	int numb[5];
-	
+	int size = (int)(sizeof(numb) / sizeof(numb[0]));
+   
 
 	for (int i = 0; i < 5; i++)
 	{
@@ -14,15 +15,21 @@ int main()
 		scanf("%d", &numb[i]);
 	}
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < size; i++)
 	{
-		for (int j = i+1; j < 5; j++)
+		int * element = &numb[i];
+		
+		for (int j = i+1; j < size; j++)
 		{
 			if (numb[j] < numb[i])
 			{
-				sortItem(&numb[j], &numb[i]);
+				element = &numb[j];
+				
 			}
 		}
+		
+		sortItem(element, &numb[i]);
+		
 	}
 
 	for (int i = 0; i < 5; i++)
